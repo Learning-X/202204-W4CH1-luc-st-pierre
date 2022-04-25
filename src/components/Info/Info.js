@@ -1,7 +1,7 @@
 const Info = () => {
   return (
     <>
-      <p class="info">0 gentlemen pointing at you</p>
+      <p className="info">0 gentlemen pointing at you</p>
     </>
   );
 };
