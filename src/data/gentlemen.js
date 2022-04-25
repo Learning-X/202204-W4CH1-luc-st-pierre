@@ -1,4 +1,4 @@
-const gentleman = [
+const gentlemen = [
   {
     id: 1,
     name: "Bertin Osborne",
@@ -31,4 +31,4 @@ const gentleman = [
   },
 ];
 
-export default gentleman;
+export default gentlemen;

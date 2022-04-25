@@ -1,7 +1,13 @@
-const Gentlemen = ({ gentleman }) => {
+const Gentlemen = ({ gentleman, action }) => {
+  let classNameGentleman = "gentleman";
+
+  if (gentleman.selected) {
+    classNameGentleman += " selected";
+  }
+
   return (
     <>
-      <li className="gentleman">
+      <li className={classNameGentleman} onClick={action}>
         <div className="gentleman__avatar-container">
           <img
             className="gentleman__avatar"
