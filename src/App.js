@@ -8,13 +8,19 @@ import gentleman from "./data/gentlemen";
 function App() {
   const [gentlemen, setGentlemen] = useState(gentleman);
 
+  const gentlemanSelected = gentlemen.filter(
+    (gentleman) => gentleman.selected === true
+  ).length;
+
+  console.log(gentlemanSelected);
+
   return (
     <div className="App">
       <header className="main-header">
         <h1 className="main-title">The pointing gentlemen</h1>
       </header>
       <section className="controls">
-        <Info />
+        <Info gentlemanSelected={gentlemanSelected} />
         <Button className="button button--select" text="Select all" />
       </section>
       <main className="main">
