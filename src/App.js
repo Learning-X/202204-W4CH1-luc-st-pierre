@@ -1,4 +1,5 @@
 import "./App.css";
+import Button from "./components/Button/Button";
 import Info from "./components/Info/Info";
 
 function App() {
@@ -9,7 +10,7 @@ function App() {
       </header>
       <section class="controls">
         <Info />
-        <button class="button button--select">Select all</button>
+        <Button className="button button--select" text="Select all" />
       </section>
       <main class="main">
         <ul class="gentlemen">
