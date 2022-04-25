@@ -12,11 +12,13 @@ function App() {
     (gentleman) => gentleman.selected === true
   ).length;
 
-  const selectAllGentleman = (gentlemen) => {
-    const gentlemenObject = gentleman.map((gentleman) => ({
-      ...gentleman,
-      selected: true,
-    }));
+  const selectAllGentleman = () => {
+    setGentlemen(
+      gentleman.map((gentleman) => ({
+        ...gentleman,
+        selected: true,
+      }))
+    );
   };
 
   return (
