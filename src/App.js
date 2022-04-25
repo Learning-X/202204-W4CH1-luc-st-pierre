@@ -3,10 +3,10 @@ import "./App.css";
 import Button from "./components/Button/Button";
 import Gentlemen from "./components/Gentlemen/Gentlemen";
 import Info from "./components/Info/Info";
-import gentleman from "./data/gentlemen";
+import gentlemenData from "./data/gentlemen";
 
 function App() {
-  const [gentlemen, setGentlemen] = useState(gentleman);
+  const [gentlemen, setGentlemen] = useState(gentlemenData);
 
   const gentlemanSelected = gentlemen.filter(
     (gentleman) => gentleman.selected === true
@@ -14,11 +14,22 @@ function App() {
 
   const selectAllGentleman = () => {
     setGentlemen(
-      gentleman.map((gentleman) => ({
+      gentlemen.map((gentleman) => ({
         ...gentleman,
         selected: true,
       }))
     );
+  };
+
+  const toggleGentleman = (gentlemanId) => {
+    const gentlemanObject = [...gentlemen];
+
+    const gentlemanToToggle = gentlemanObject.find((gentleman) => {
+      return gentleman.id === gentlemanId;
+    });
+
+    gentlemanToToggle.selected = !gentlemanToToggle.selected;
+    setGentlemen(gentlemanObject);
   };
 
   return (
@@ -37,7 +48,15 @@ function App() {
       <main className="main">
         <ul className="gentlemen">
           {gentlemen.map((gentleman) => {
-            return <Gentlemen key={gentleman.id} gentleman={gentleman} />;
+            return (
+              <Gentlemen
+                key={gentleman.id}
+                gentleman={gentleman}
+                action={() => {
+                  toggleGentleman(gentleman.id);
+                }}
+              />
+            );
           })}
         </ul>
       </main>

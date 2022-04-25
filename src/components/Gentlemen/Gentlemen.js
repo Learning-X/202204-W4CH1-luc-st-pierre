@@ -1,7 +1,7 @@
-const Gentlemen = ({ gentleman }) => {
+const Gentlemen = ({ gentleman, action }) => {
   return (
     <>
-      <li className="gentleman">
+      <li className="gentleman" onClick={action}>
         <div className="gentleman__avatar-container">
           <img
             className="gentleman__avatar"
