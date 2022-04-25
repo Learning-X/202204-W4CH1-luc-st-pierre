@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "./App.css";
 import Button from "./components/Button/Button";
-import Gentlemen from "./components/Gentlemen/Gentlemen";
+import Gentlemen from "./components/Gentleman/Gentleman";
 import Info from "./components/Info/Info";
 import gentlemenData from "./data/gentlemen";
 
@@ -32,6 +32,15 @@ function App() {
     setGentlemen(gentlemanObject);
   };
 
+  const removeGentleman = (gentlemanId) => {
+    setTimeout(() => {
+      const filteredGentlemen = gentlemen.filter(
+        (gentleman) => gentleman.id !== gentlemanId
+      );
+      setGentlemen(filteredGentlemen);
+    }, 5);
+  };
+
   return (
     <div className="App">
       <header className="main-header">
@@ -54,6 +63,9 @@ function App() {
                 gentleman={gentleman}
                 action={() => {
                   toggleGentleman(gentleman.id);
+                }}
+                actionRemove={() => {
+                  removeGentleman(gentleman.id);
                 }}
               />
             );

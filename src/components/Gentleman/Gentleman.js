@@ -1,4 +1,4 @@
-const Gentlemen = ({ gentleman, action }) => {
+const Gentlemen = ({ gentleman, action, actionRemove }) => {
   let classNameGentleman = "gentleman";
 
   if (gentleman.selected) {
@@ -34,7 +34,10 @@ const Gentlemen = ({ gentleman, action }) => {
           </ul>
         </div>
         <i className="icon gentleman__icon fas fa-check"></i>
-        <i className="icon gentleman__icon gentleman__icon--delete fas fa-times"></i>
+        <i
+          onClick={actionRemove}
+          className="icon gentleman__icon gentleman__icon--delete fas fa-times"
+        ></i>
       </li>
     </>
   );
