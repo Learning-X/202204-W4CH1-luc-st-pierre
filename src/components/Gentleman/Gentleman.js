@@ -1,3 +1,5 @@
+import "./Gentleman.css";
+
 const Gentlemen = ({ gentleman, action, actionRemove }) => {
   let classNameGentleman = "gentleman";
 
