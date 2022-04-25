@@ -10,15 +10,15 @@ function App() {
 
   return (
     <div className="App">
-      <header class="main-header">
-        <h1 class="main-title">The pointing gentlemen</h1>
+      <header className="main-header">
+        <h1 className="main-title">The pointing gentlemen</h1>
       </header>
-      <section class="controls">
+      <section className="controls">
         <Info />
         <Button className="button button--select" text="Select all" />
       </section>
-      <main class="main">
-        <ul class="gentlemen">
+      <main className="main">
+        <ul className="gentlemen">
           {gentlemen.map((gentleman) => {
             return <Gentlemen key={gentleman.id} gentleman={gentleman} />;
           })}
