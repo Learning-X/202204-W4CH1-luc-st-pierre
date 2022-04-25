@@ -12,7 +12,12 @@ function App() {
     (gentleman) => gentleman.selected === true
   ).length;
 
-  console.log(gentlemanSelected);
+  const selectAllGentleman = (gentlemen) => {
+    const gentlemenObject = gentleman.map((gentleman) => ({
+      ...gentleman,
+      selected: true,
+    }));
+  };
 
   return (
     <div className="App">
@@ -21,7 +26,11 @@ function App() {
       </header>
       <section className="controls">
         <Info gentlemanSelected={gentlemanSelected} />
-        <Button className="button button--select" text="Select all" />
+        <Button
+          className="button button--select"
+          action={selectAllGentleman}
+          text="Select all"
+        />
       </section>
       <main className="main">
         <ul className="gentlemen">
