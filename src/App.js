@@ -1,9 +1,13 @@
+import { useState } from "react";
 import "./App.css";
 import Button from "./components/Button/Button";
 import Gentlemen from "./components/Gentlemen/Gentlemen";
 import Info from "./components/Info/Info";
+import gentleman from "./data/gentlemen";
 
 function App() {
+  const [gentlemen, setGentlemen] = useState(gentleman);
+
   return (
     <div className="App">
       <header class="main-header">
@@ -15,7 +19,9 @@ function App() {
       </section>
       <main class="main">
         <ul class="gentlemen">
-          <Gentlemen />
+          {gentlemen.map((gentleman) => {
+            return <Gentlemen key={gentleman.id} gentleman={gentleman} />;
+          })}
         </ul>
       </main>
     </div>
